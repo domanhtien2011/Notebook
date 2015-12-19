@@ -1,8 +1,12 @@
 %h1= @note.title
 %p= @note.content
 
-= link_to "All Notes", notes_path
+- if user_signed_in?
+  = link_to("Edit", edit_note_path(@note))
 
-= link_to("Edit", edit_note_path(@note))
+  = link_to("Delete", note_path(@note), method: :delete, data: { confirm: "Are you sure?" })
 
-= link_to("Delete", note_path(@note), method: :delete, data: { confirm: "Are you sure?" })
+  = link_to "All Notes", notes_path
+- else
+  = link_to "All Notes", notes_path
+
