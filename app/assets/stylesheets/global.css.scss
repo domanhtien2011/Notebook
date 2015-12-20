@@ -1,0 +1,172 @@
+$dark_gray: #2b2e2e;
+$light_gray: #c0c1c1;
+$green: #33cd99;
+
+@mixin bold_font
+{
+    font-family: 'Brandon Grotesque','Helvetica Neue', Helvetica, sans-serif;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+*
+{
+    box-sizing: border-box;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+body
+{
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+
+    padding-top: 4.5rem;
+}
+
+.wrapper
+{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.wrapper_with_padding
+{
+    width: 80%;
+    margin: 0 auto;
+    padding: 3.5rem 0;
+}
+
+.clearfix:before,
+.clearfix:after
+{
+    display: table;
+
+    content: ' ';
+}
+
+.clearfix:after
+{
+    clear: both;
+}
+
+button,
+.button
+{
+    padding: 1rem 3.5rem;
+
+    border: none;
+    border-radius: 2rem;
+    outline: none;
+    background: $green;
+    a
+    {
+        text-decoration: none;
+
+        color: white;
+    }
+}
+
+.button
+{
+    margin: 2rem 0;
+
+    color: white;
+}
+
+a
+{
+    text-decoration: none;
+
+    color: $green;
+    &:hover
+    {
+        color: $dark_gray;
+    }
+}
+
+header
+{
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+    padding: 1.75rem 0;
+
+    border-bottom: 7px solid $green;
+    background: $dark_gray;
+    .header_inner
+    {
+        width: 90%;
+        margin: 0 auto;
+        #logo
+        {
+            display: inline-block;
+            float: left;
+
+            width: 10rem;
+        }
+        nav
+        {
+            float: right;
+            a
+            {
+                font-size: 1.1rem;
+                line-height: 1.5;
+
+                margin-left: 1rem;
+
+                text-decoration: none;
+
+                color: white;
+                &:hover
+                {
+                    color: $green;
+                }
+            }
+        }
+    }
+}
+
+footer
+{
+    width: 100%;
+    padding: 2rem 0;
+
+    text-align: center;
+
+    color: white;
+    background: $dark_gray;
+
+    @include bold_font;
+    p
+    {
+        font-size: .85rem;
+
+        margin: 0;
+    }
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea
+{
+    width: 100%;
+    margin-bottom: 1rem;
+
+    border: 1px solid $light_gray;
+    border-radius: .4rem;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password']
+{
+    height: 40px;
+}
+
+textarea
+{
+    min-height: 200px;
+}
