@@ -3,11 +3,10 @@ class NotesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @notes = Note.all.order("created_at ASC")
+    @notes = Note.where(user_id: current_user)
   end
 
   def show
-
   end
 
   def new
